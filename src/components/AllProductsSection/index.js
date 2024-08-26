@@ -1,3 +1,34 @@
+import {Component} from 'react'
+import Loader from 'react-loader-spinner'
+import Cookies from 'js-cookie'
+import FiltersGroup from '../FiltersGroup'
+import ProductCard from '../ProductCard'
+import ProductsHeader from '../ProductsHeader'
+import './index.css'
+
+const categoryOptions = [
+  {
+    name: 'Clothing',
+    categoryId: '1',
+  },
+  {
+    name: 'Electronics',
+    categoryId: '2',
+  },
+  {
+    name: 'Appliances',
+    categoryId: '3',
+  },
+  {
+    name: 'Grocery',
+    categoryId: '4',
+  },
+  {
+    name: 'Toys',
+    categoryId: '5', 
+  },
+]  
+
 
 
     const jwtToken = Cookies.get('jwt_token')
