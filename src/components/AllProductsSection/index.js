@@ -59,7 +59,6 @@ const categoryOptions = [
         isLoading: false,
       })
     }
-  }
 
   changeSortby = activeOptionId => {
     this.setState({activeOptionId}, this.getProducts)
