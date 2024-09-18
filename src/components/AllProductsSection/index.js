@@ -92,10 +92,10 @@ class AllProductsSection extends Component {
     })
     const jwtToken = Cookies.get('jwt_token')
     const {
-      activeOptionId,
+      activeOptionId, 
       activeCategoryId, 
-      searchInput,
-      activeRatingId,
+      searchInput, 
+      activeRatingId
     } = this.state
     const apiUrl = `https://apis.ccbp.in/products?sort_by=${activeOptionId}&category=${activeCategoryId}&title_search=${searchInput}&rating=${activeRatingId}`
     const options = {
@@ -166,8 +166,8 @@ class AllProductsSection extends Component {
         <ul className="products-list">
           {productsList.map(product => (
             <ProductCard productData={product} key={product.id} />
-          ))}  
-        </ul>  
+          ))}
+        </ul>
       </div>
     ) : (
       <div className="no-products-view">
@@ -179,8 +179,8 @@ class AllProductsSection extends Component {
         <h1 className="no-products-heading">No Products Found</h1>
         <p className="no-products-description">
           We could not find any products. Try other filters.
-        </p>  
-      </div>  
+        </p>
+      </div>
     )
   }
 
@@ -195,23 +195,23 @@ class AllProductsSection extends Component {
       case apiStatusConstants.inProgress:
         return this.renderLoadingView()
       default:
-        return null      
+        return null
     }
-  }    
+  }
 
   clearFilters = () => {
-    this.setState (
+    this.setState(
       {
         searchInput: '',
         activeCategoryId: '',
         activeRatingId: '',
       },
       this.getProducts,
-    )  
+    )
   }
 
   changeRating = activeRatingId => {
-     this.setState({activeRatingId}, this.getProducts)
+    this.setState({activeRatingId}, this.getProducts)
   }
 
   changeCategory = activeCategoryId => {
@@ -243,9 +243,9 @@ class AllProductsSection extends Component {
           changeRating={this.changeRating}
           clearFilters={this.clearFilters}
         />
-        {this.renderAllProducts()}  
+        {this.renderAllProducts()}
       </div>
-    )  
+    )
   }
 }
 
