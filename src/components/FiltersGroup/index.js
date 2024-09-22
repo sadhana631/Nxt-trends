@@ -2,7 +2,7 @@ import {BsSquare} from 'react-icons/bs'
 
 import './index.css'
 
-const FiltersGroup = () => {
+const FiltersGroup = props => {
   const renderRatingFiltersList = () => {
     const {ratingsList} = props
 
@@ -24,8 +24,8 @@ const FiltersGroup = () => {
             alt={`rating ${rating.ratingId}`}
             className="rating-img"
           />
-          <p className={ratingClassName}>& up</p>  
-        </li>    
+          <p className={ratingClassName}>& up</p>
+        </li>
       )
     })
   }
@@ -34,7 +34,7 @@ const FiltersGroup = () => {
     <div>
       <h1 className="rating-heading">Rating</h1>
       <ul className="ratings-list">{renderRatingFiltersList()}</ul>
-    </div>      
+    </div>
   )
 
   const renderCategoriesList = () => {
@@ -55,15 +55,15 @@ const FiltersGroup = () => {
           onClick={onClickCategoryItem}
         >
           <p className={categoryClassName}>{category.name}</p>
-        </li>    
-      )  
+        </li>
+      )
     })
   }
 
   const renderProductCategories = () => (
     <>
-     <h1 className="category-heading">Category</h1>
-     <ul className="categories-list">{renderCategoriesList()}</ul>
+      <h1 className="category-heading">Category</h1>
+      <ul className="categories-list">{renderCategoriesList()}</ul>
     </>
   )
 
@@ -92,9 +92,9 @@ const FiltersGroup = () => {
           onChange={onChangeSearchInput}
           onKeyDown={onEnterSearchInput}
         />
-        <BsSquare className="search-icon" />  
+        <BsSquare className="search-icon" />
       </div>
-    )  
+    )
   }
 
   const {clearFilters} = props
@@ -110,9 +110,9 @@ const FiltersGroup = () => {
         onClick={clearFilters}
       >
         Clear Filters
-      </button>  
+      </button>
     </div>
   )
 }
-    
+
 export default FiltersGroup
